@@ -1,0 +1,10 @@
+server:
+  port: 4444
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #file: ///C:/repo-escalab/config-server
+          uri: https://github.com/jcifu/ms-store/config-server

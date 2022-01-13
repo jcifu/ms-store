@@ -1,0 +1,14 @@
+server:
+  port: 2222
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jcifu/ms-store/shoppingcart-ms
+
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:2222/eureka

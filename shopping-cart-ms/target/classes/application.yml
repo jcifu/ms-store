@@ -1,0 +1,37 @@
+
+server:
+  port: 2222
+
+eureka:
+     client:
+         service-url: 
+             defaultZone: http://localhost:8761/eureka
+        
+         register-with-eureka: true
+         fetch-registry: false
+
+     instance:
+       status-page-url-path: /infoCart
+       health-check-url-path: /healthCart
+
+spring:
+  application:
+    name: shoppingcart.service
+  cloud:
+    config:
+      enabled: false
+  jpa:
+    database: MYSQL
+    database-platform:
+    show-sql: true 
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost/shoppingCarts?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: root
+      password:
+  main:
+        banner-mode: off
